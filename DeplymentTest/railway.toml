@@ -1,0 +1,13 @@
+﻿[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+context = "."
+
+[deploy]
+restartPolicyType = "ALWAYS"
+
+[services]
+  [services.web]
+  startCommand = "dotnet DeplymentTest.dll"
+  healthCheckPath = "/health"
+  internalPort = 8080
